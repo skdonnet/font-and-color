@@ -15,5 +15,5 @@ document
 document
   .querySelector('input[type="color"]')
   .addEventListener('input', event => {
-    p.innerText = root.style.setProperty('--color', `${event.target.value}`);
+    root.style.setProperty('--color', `${event.target.value}`);
   });
