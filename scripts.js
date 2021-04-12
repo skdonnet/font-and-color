@@ -1,5 +1,5 @@
 const p = document.querySelector('p');
-const root = document.querySelector('#root');
+const root = document.querySelector(':root');
 const txt = document.getElementById('txt');
 
 document.addEventListener('keyup', event => {
@@ -15,5 +15,5 @@ document
 document
   .querySelector('input[type="color"]')
   .addEventListener('input', event => {
-    root.style.setProperty('--color');
+    p.innerText = root.style.setProperty('--color', `${event.target.value}`);
   });
