@@ -1,7 +1,9 @@
-const p = document.querySelector('p');
+const p = document.createElement('p');
 const root = document.querySelector(':root');
 const txt = document.getElementById('txt');
 const form = document.querySelectorAll('form');
+
+document.body.appendChild(p);
 
 document.addEventListener('keyup', event => {
   p.innerText = txt.value;
