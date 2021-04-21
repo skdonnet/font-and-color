@@ -2,6 +2,7 @@ const p = document.createElement('p');
 const root = document.querySelector(':root');
 const txt = document.getElementById('txt');
 const form = document.querySelectorAll('form');
+const fontV = document.querySelector('#font-size');
 
 document.body.appendChild(p);
 
@@ -24,13 +25,23 @@ document
 document
   .querySelector('#min-font-size-form')
   .addEventListener('keyup', event => {
-    event.preventDefault();
-    document.querySelector('#font-size').min = event.target.value;
+    const newMin = event.target.element[0].value;
+
+    if (newMin > fontV.max) {
+      fontV.min = newMin;
+    } else {
+      p.innerText = 'No good!';
+    }
   });
 
 document
   .querySelector('#max-font-size-form')
   .addEventListener('keyup', event => {
-    event.preventDefault();
-    document.querySelector('#font-size').max = event.target.value;
+    const newMax = event.target.element[0].value;
+
+    if (newMax < fontV.min) {
+      fontV.max = newMax;
+    } else {
+      p.innerText = 'No good!';
+    }
   });
